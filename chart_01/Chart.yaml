@@ -1,0 +1,15 @@
+apiVersion: v2
+name: App-HelmChart
+description: My Helm chart for Kubernetes
+type: application
+version: 1.0.0
+appVersion: "0.0.1"
+
+keywords:
+        - http
+        - https
+
+maintainers:
+        - name: Skytorin
+        - email: example@com
+        - url: www.skytorin.ru  
