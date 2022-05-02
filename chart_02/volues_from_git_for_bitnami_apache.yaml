@@ -1,3 +1,5 @@
+# helm repo add bitnami https://charts.bitnami.com/bitnami
+# helm install my-release bitnami/apache
 # helm install git-apache bitnami/apache -f chart_02/volues_from_git_for_bitnami_apache.yaml
 # или
 # helm upgrade git-apache bitnami/apache -f chart_02/volues_from_git_for_bitnami_apache.yaml
@@ -7,3 +9,5 @@ cloneHtdocsFromGit:
         enabled: true
         repository: https://github.com/skytorin/skytorin.github.io.git
         branch: master
+cloneHtdocsFromGit.enableAutoRefresh: true
+cloneHtdocsFromGit.interval: 60        

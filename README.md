@@ -10,6 +10,12 @@ minikube dashboard
 minikube service app-deployment
 ```
 
+## Автодополнение команд bash
+```
+source <(helm completion bash)
+helm completion bash > /etc/bash_completion.d/helm
+```
+
 ## Команды Helm
 Версия Helm
 ```
@@ -27,13 +33,28 @@ helm search repo
 ```
 helm list
 ```
+Просмотр статуса релиза
+```
+helm status my-app
+```
+Информация по Helm Chart
+```
+helm get all my-app
+helm get notes my-app
+helm get manifest my-app
+helm get volues my-app
+```
 Автосоздание скелета Helm Chart в директорию app_auto
 ```
 helm create app_auto
 ```
-Инсталляция релиза из Helm chart
+Инсталляция релиза из Helm Chart
 ```
 helm install app chart_01/
+```
+Откат к предыдущей версии релиза
+```
+helm rollback my-app
 ```
 Удаление деплоймента Helm Chart со всеми сущностями 
 ```
