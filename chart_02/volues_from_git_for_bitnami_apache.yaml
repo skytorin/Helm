@@ -10,4 +10,5 @@ cloneHtdocsFromGit:
         repository: https://github.com/skytorin/skytorin.github.io.git
         branch: master
 cloneHtdocsFromGit.enableAutoRefresh: true
-cloneHtdocsFromGit.interval: 60        
+cloneHtdocsFromGit.interval: 60
+replicaCount: 1
