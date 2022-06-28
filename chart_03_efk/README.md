@@ -6,6 +6,8 @@
 1. ```kubectl create ns efk```
 2. ```helm dependency update .```
 3. ```helm upgrade --install efk -n efk .```
+4. ```k port-forward svc/efk-kibana 33333:30010``` 
+5. УЗ по умолчанию: admin/admin
 
 Проверка работоспособности еластика, зайти внутрь пода, выполнить 
 ```curl -XGET http://localhost:9200 -u 'admin:admin' --insecure``` 
