@@ -1,22 +1,32 @@
-# Helm
+# H e l m
 
-## Использование minikube
-Веб дашборд с информацией о класере
-```
-minikube dashboard
-```
-Создание сервиса в minikube
-```
-minikube service app-deployment
-```
 
-## Установка Helm через APT
-``` 
+
+## Установка Helm
+Установка через APT
+```bash
 curl https://baltocdn.com/helm/signing.asc | gpg --dearmor | sudo tee /usr/share/keyrings/helm.gpg > /dev/null
 sudo apt-get install apt-transport-https --yes
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/helm.gpg] https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
 sudo apt-get update
 sudo apt-get install helm
+```
+Ручная установка
+```bash
+export HELM_VERSION=v3.3.4
+wget https://get.helm.sh/helm-${HELM_VERSION}-linux-amd64.tar.gz
+tar zxvf helm-${HELM_VERSION}-linux-amd64.tar.gz
+sudo mv ./linux-amd64/helm /usr/local/bin/
+rm helm-${HELM_VERSION}-linux-amd64.tar.gz && rm -r ./linux-amd64
+helm plugin install https://github.com/databus23/helm-diff --version v3.1.3
+```
+
+## Установка Helmfile
+```bash
+export HELMFILE_VERSION=v0.132.0
+curl -LO "https://github.com/roboll/helmfile/releases/download/${HELMFILE_VERSION}/helmfile_linux_amd64"
+sudo mv helmfile_linux_amd64 /usr/local/bin/helmfile
+sudo chmod +x /usr/local/bin/helmfile
 ```
 
 ## Автодополнение команд bash
