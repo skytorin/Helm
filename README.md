@@ -71,9 +71,17 @@ helm create app_auto
 ```
 helm install app chart_01/
 ```
+Ревизия истории всех релизов
+```
+helm hitstory my-app -n namespace
+```
 Откат к предыдущей версии релиза
 ```
-helm rollback my-app
+helm rollback my-app -n namespace
+```
+Откат к 5 ревизии релиза
+```
+helm rollback my-app 5 -n namespace
 ```
 Удаление деплоймента Helm Chart со всеми сущностями 
 ```
@@ -96,8 +104,15 @@ helm upgrade app chart_01 --set replicaCount=2 --set container.image=httpd:lates
 helm repo add bitnami https://charts.bitnami.com/bitnami
 ```
 
-
-
+## Команды Helmfile
+Сравнение изменений установленного релиза с чартом в репе
+```
+helmfile --kube-context <context> -n <namespace> -e <env> diff
+```
+Установка релиза
+```
+helmfile --kube-context <context> -n <namespace> -e <env> apply
+```
 
 
 
