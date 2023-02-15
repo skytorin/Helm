@@ -69,7 +69,7 @@ helm create app_auto
 ```
 Инсталляция релиза из Helm Chart
 ```
-helm install <app_name> <chart_dir/> -n <namespace>
+helm install {app_name} {chart_dir/} -n {namespace}
 ```
 Ревизия истории всех релизов
 ```
