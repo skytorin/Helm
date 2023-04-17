@@ -19,17 +19,32 @@ tar zxvf helm-${HELM_VERSION}-linux-amd64.tar.gz
 sudo mv ./linux-amd64/helm /usr/local/bin/
 rm helm-${HELM_VERSION}-linux-amd64.tar.gz && rm -r ./linux-amd64
 ```
+
+
 ## Установка плагинов Helm
-Ручная установка плагинов Helm
+### Установка через менеджер плагинов HELM
+Установка самой последней версии
+```
+helm plugin install https://github.com/databus23/helm-diff
+helm plugin install https://github.com/jkroepke/helm-secrets
+```
+Установка заданной версии
 ```
 helm plugin install https://github.com/databus23/helm-diff --version v3.6.0
 helm plugin install https://github.com/jkroepke/helm-secrets --version v4.4.2
 ```
-Установка плагинов Helm через менеджер
+### Ручная установка
+Установка самой последней версия (скачивание и распаковка в папку с Helm плагинами)
 ```
-curl -LsSf https://github.com/jkroepke/helm-diff/releases/download/v3.6.0/helm-diff.tar.gz | tar -C "$(helm env HELM_PLUGINS)" -xzf-
+curl -LsSf https://github.com/jkroepke/helm-secrets/releases/latest/download/helm-secrets.tar.gz | tar -C "$(helm env HELM_PLUGINS)" -xzf-
+curl -LsSf https://github.com/databus23/helm-diff/releases/latest/download/helm-secrets.tar.gz | tar -C "$(helm env HELM_PLUGINS)" -xzf-
+```
+Установка заданной версии (скачивание и распаковка в папку с Helm плагинами)
+```
 curl -LsSf https://github.com/jkroepke/helm-secrets/releases/download/v4.2.2/helm-secrets.tar.gz | tar -C "$(helm env HELM_PLUGINS)" -xzf-
+curl -LsSf https://github.com/databus23/helm-diff/releases/latest/download/helm-diff-linux-amd64.tgz | tar -C "$(helm env HELM_PLUGINS)" -xzf-
 ```
+
 
 ## Установка Helmfile
 ```bash
