@@ -24,7 +24,8 @@ helm plugin install https://github.com/databus23/helm-diff --version v3.1.3
 ## Установка Helmfile
 ```bash
 export HELMFILE_VERSION=v0.132.0
-curl -LO "https://github.com/roboll/helmfile/releases/download/${HELMFILE_VERSION}/helmfile_linux_amd64"
+#curl -LO "https://github.com/roboll/helmfile/releases/download/${HELMFILE_VERSION}/helmfile_linux_amd64"
+#curl -LO "https://github.com/helmfile/helmfile/releases/tag/${HELMFILE_VERSION}/helmfile_linux_amd64"
 sudo mv helmfile_linux_amd64 /usr/local/bin/helmfile
 sudo chmod +x /usr/local/bin/helmfile
 ```
