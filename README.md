@@ -13,20 +13,30 @@ sudo apt-get install helm
 ```
 Ручная установка
 ```bash
-export HELM_VERSION=v3.3.4
+export HELM_VERSION=v3.10.3
 wget https://get.helm.sh/helm-${HELM_VERSION}-linux-amd64.tar.gz
 tar zxvf helm-${HELM_VERSION}-linux-amd64.tar.gz
 sudo mv ./linux-amd64/helm /usr/local/bin/
 rm helm-${HELM_VERSION}-linux-amd64.tar.gz && rm -r ./linux-amd64
-helm plugin install https://github.com/databus23/helm-diff --version v3.1.3
+```
+## Установка плагинов Helm
+Ручная установка плагинов Helm
+```
+helm plugin install https://github.com/databus23/helm-diff --version v3.6.0
+helm plugin install https://github.com/jkroepke/helm-secrets --version v4.4.2
+```
+Установка плагинов Helm через менеджер
+```
+curl -LsSf https://github.com/jkroepke/helm-diff/releases/download/v3.6.0/helm-diff.tar.gz | tar -C "$(helm env HELM_PLUGINS)" -xzf-
+curl -LsSf https://github.com/jkroepke/helm-secrets/releases/download/v4.2.2/helm-secrets.tar.gz | tar -C "$(helm env HELM_PLUGINS)" -xzf-
 ```
 
 ## Установка Helmfile
 ```bash
-export HELMFILE_VERSION=v0.132.0
-#curl -LO "https://github.com/roboll/helmfile/releases/download/${HELMFILE_VERSION}/helmfile_linux_amd64"
-#curl -LO "https://github.com/helmfile/helmfile/releases/tag/${HELMFILE_VERSION}/helmfile_linux_amd64"
-sudo mv helmfile_linux_amd64 /usr/local/bin/helmfile
+export HELMFILE_VERSION=0.149.0
+curl -LO "https://github.com/helmfile/helmfile/releases/download/v${HELMFILE_VERSION}/helmfile_${HELMFILE_VERSION}_linux_amd64.tar.gz"
+tar zxvf helmfile_${HELMFILE_VERSION}_linux_amd64.tar.gz
+sudo mv helmfile /usr/local/bin/helmfile
 sudo chmod +x /usr/local/bin/helmfile
 ```
 
