@@ -22,7 +22,7 @@ rm helm-${HELM_VERSION}-linux-amd64.tar.gz && rm -r ./linux-amd64
 
 
 ## Установка плагинов Helm
-### Установка через менеджер плагинов HELM
+#### Установка через менеджер плагинов HELM
 Установка самой последней версии
 ```
 helm plugin install https://github.com/databus23/helm-diff
@@ -33,7 +33,7 @@ helm plugin install https://github.com/jkroepke/helm-secrets
 helm plugin install https://github.com/databus23/helm-diff --version v3.6.0
 helm plugin install https://github.com/jkroepke/helm-secrets --version v4.4.2
 ```
-### Ручная установка
+#### Ручная установка
 Установка самой последней версия (скачивание и распаковка в папку с Helm плагинами)
 ```
 curl -LsSf https://github.com/jkroepke/helm-secrets/releases/latest/download/helm-secrets.tar.gz | tar -C "$(helm env HELM_PLUGINS)" -xzf-
