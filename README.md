@@ -93,6 +93,11 @@ helm get volues my-app
 ```
 helm create app_auto
 ```
+Скачать Helm Charts 
+```
+helm pull oci://cr.yandex/<идентификатор_реестра>/<имя_Helm-чарта> --version <версия>
+helm pull oci://registry-1.docker.io/bitnamicharts/nginx
+```
 Инсталляция релиза из Helm Chart
 ```
 helm install {app_name} {chart_dir/} -n {namespace}
